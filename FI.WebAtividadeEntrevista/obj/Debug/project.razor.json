@@ -1,0 +1,19 @@
+{
+  "FilePath": "d:\\Teste Empresa Função Sistemas\\Projeto2\\FI.WebAtividadeEntrevista\\FI.WebAtividadeEntrevista\\WebAtividadeEntrevista.csproj",
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  },
+  "ProjectWorkspaceState": {
+    "TagHelpers": [],
+    "CSharpLanguageVersion": 800
+  },
+  "RootNamespace": null,
+  "Documents": [],
+  "SerializationFormat": "0.2"
+}
