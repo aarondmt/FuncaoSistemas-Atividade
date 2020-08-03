@@ -146,6 +146,12 @@ namespace WebAtividadeEntrevista.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Função para verificar se o CPF do beneficiario já existe no Banco de Dados
+        /// A função não é utilizada
+        /// </summary>
+        /// <param name="model">Objeto Beneficiario</param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult IncluirBeneficiario(BeneficiarioModel model)
         {
