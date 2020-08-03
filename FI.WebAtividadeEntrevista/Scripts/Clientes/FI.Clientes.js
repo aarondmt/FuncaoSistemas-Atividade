@@ -30,33 +30,42 @@ $(document).ready(function () {
             if (VerificaExisteCpfNaTabela(cpf)) {
                 ModalDialog("Ocorreu um erro", "O CPF informado já esta na tabela.");
             } else {
-                $.ajax({
-                    url: urlPostBeneficiario,
-                    method: "POST",
-                    data: {
-                        "NOME": nome,
-                        "CPF": cpf
-                    },
-                    error:
-                        function (r) {
-                            if (r.status == 400)
-                                ModalDialog("Ocorreu um erro", r.responseJSON);
-                            else if (r.status == 500)
-                                ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
-                        },
-                    success:
-                        function (r) {
-                            var linha = '<tr data-alterado="false">' +
-                                '<td>' + cpf + '</td>' +
-                                '<td>' + nome + '</td>' +
-                                '<td>' +
-                                botoesAlterarExcluirBeneficiario +
-                                '</td>' +
-                                '</tr>';
-                            $('#GridBeneficiario tbody').append(linha);
-                            $("#formBeneficiario")[0].reset();
-                        }
-                });
+                var linha = '<tr data-alterado="false">' +
+                    '<td>' + cpf + '</td>' +
+                    '<td>' + nome + '</td>' +
+                    '<td>' +
+                    botoesAlterarExcluirBeneficiario +
+                    '</td>' +
+                    '</tr>';
+                $('#GridBeneficiario tbody').append(linha);
+                $("#formBeneficiario")[0].reset();
+                //$.ajax({
+                //    url: urlPostBeneficiario,
+                //    method: "POST",
+                //    data: {
+                //        "NOME": nome,
+                //        "CPF": cpf
+                //    },
+                //    error:
+                //        function (r) {
+                //            if (r.status == 400)
+                //                ModalDialog("Ocorreu um erro", r.responseJSON);
+                //            else if (r.status == 500)
+                //                ModalDialog("Ocorreu um erro", "Ocorreu um erro interno no servidor.");
+                //        },
+                //    success:
+                //        function (r) {
+                //            var linha = '<tr data-alterado="false">' +
+                //                '<td>' + cpf + '</td>' +
+                //                '<td>' + nome + '</td>' +
+                //                '<td>' +
+                //                botoesAlterarExcluirBeneficiario +
+                //                '</td>' +
+                //                '</tr>';
+                //            $('#GridBeneficiario tbody').append(linha);
+                //            $("#formBeneficiario")[0].reset();
+                //        }
+                //});
             }
         }
     });

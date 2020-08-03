@@ -60,6 +60,17 @@ namespace FI.AtividadeEntrevista.BLL
         }
 
         /// <summary>
+        /// Lista todos os beneficiarios de um cliente
+        /// </summary>
+        /// <param name="idCliente">Id do Cliente</param>
+        /// <returns>Lista dos Beneficiarios desse Cliente</returns>
+        public List<DML.Beneficiario> ListarBeneficiarioDoCliente(long idCliente)
+        {
+            DAL.DaoBeneficiario bene = new DAL.DaoBeneficiario();
+            return bene.ListarBeneficiarioDoCliente(idCliente);
+        }
+
+        /// <summary>
         /// Lista os beneficiarios
         /// </summary>
         public List<DML.Beneficiario> Pesquisa(int iniciarEm, int quantidade, string campoOrdenacao, bool crescente, out int qtd)

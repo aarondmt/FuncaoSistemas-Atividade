@@ -64,6 +64,23 @@ namespace FI.AtividadeEntrevista.DAL
         }
 
         /// <summary>
+        /// Lista todos os beneficiarios do cliente
+        /// </summary>
+        /// <param name="idCliente">Id do Cliente</param>
+        /// <returns></returns>
+        internal List<Beneficiario> ListarBeneficiarioDoCliente(long idCliente)
+        {
+            List<System.Data.SqlClient.SqlParameter> parametros = new List<System.Data.SqlClient.SqlParameter>();
+
+            parametros.Add(new System.Data.SqlClient.SqlParameter("IDCLIENTE", idCliente));
+
+            DataSet ds = base.Consultar("FI_SP_ConsBeneficiario", parametros);
+            List<Beneficiario> bene = Converter(ds);
+
+            return bene;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="iniciarEm"></param>

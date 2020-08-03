@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FI.AtividadeEntrevista.DML;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,8 +34,54 @@ namespace FI.AtividadeEntrevista.BLL
         /// <param name="cliente">Objeto de cliente</param>
         public void Alterar(DML.Cliente cliente)
         {
+            DAL.DaoBeneficiario daoBene = new DAL.DaoBeneficiario();
             DAL.DaoCliente cli = new DAL.DaoCliente();
             cli.Alterar(cliente);
+
+            List<Beneficiario> listaBeneficiarioAlterar = new List<Beneficiario>();
+            List<Beneficiario> listaBeneficiarioInserir = new List<Beneficiario>();
+            List<Beneficiario> listaBeneficiario = daoBene.ListarBeneficiarioDoCliente(cliente.Id);
+            if (listaBeneficiario != null && listaBeneficiario.Count > 0)
+            {
+                foreach (var beneficiario in cliente.ListaBeneficiario)
+                {
+                    if (listaBeneficiario.Any(b => b.Cpf == beneficiario.Cpf))
+                    {
+                        beneficiario.Cliente.Id = cliente.Id;
+                        beneficiario.Id = listaBeneficiario.First(b => b.Cpf == beneficiario.Cpf).Id;
+                        listaBeneficiarioAlterar.Add(beneficiario);
+                        listaBeneficiario.RemoveAll(b => b.Cpf == beneficiario.Cpf);
+                    }
+                    else
+                    {
+                        beneficiario.Cliente.Id = cliente.Id;
+                        listaBeneficiarioInserir.Add(beneficiario);
+                    }
+                }
+
+                foreach (var beneficiario in listaBeneficiarioInserir)
+                {
+                    daoBene.Incluir(beneficiario);
+                }
+
+                foreach (var beneficiario in listaBeneficiarioAlterar)
+                {
+                    daoBene.Alterar(beneficiario);
+                }
+
+                foreach (var beneficiario in listaBeneficiario)
+                {
+                    daoBene.Excluir(beneficiario.Id);
+                }
+            }
+            else
+            {
+                foreach (var beneficiario in cliente.ListaBeneficiario)
+                {
+                    beneficiario.Cliente.Id = cliente.Id;
+                    daoBene.Incluir(beneficiario);
+                }
+            }
         }
 
         /// <summary>

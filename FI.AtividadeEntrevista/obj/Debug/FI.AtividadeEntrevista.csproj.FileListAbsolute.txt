@@ -22,3 +22,9 @@ D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FI.Ativida
 D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
 D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb
 D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csprojAssemblyReference.cache
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.dll
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\bin\Debug\FI.AtividadeEntrevista.pdb
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csprojAssemblyReference.cache
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.csproj.CoreCompileInputs.cache
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.dll
+D:\Teste Empresa Função Sistemas\Projeto2\FI.WebAtividadeEntrevista\FuncaoSistemas-Atividade\FI.AtividadeEntrevista\obj\Debug\FI.AtividadeEntrevista.pdb

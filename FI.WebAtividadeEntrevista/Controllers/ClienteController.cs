@@ -102,7 +102,8 @@ namespace WebAtividadeEntrevista.Controllers
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
                     Telefone = model.Telefone,
-                    Cpf = model.Cpf
+                    Cpf = model.Cpf,
+                    ListaBeneficiario = model.ListaBeneficiario
                 });
                                
                 return Json("Cadastro alterado com sucesso");
@@ -113,6 +114,7 @@ namespace WebAtividadeEntrevista.Controllers
         public ActionResult Alterar(long id)
         {
             BoCliente bo = new BoCliente();
+            BoBeneficiario boBeneficiario = new BoBeneficiario();
             Cliente cliente = bo.Consultar(id);
             Models.ClienteModel model = null;
 
@@ -133,7 +135,12 @@ namespace WebAtividadeEntrevista.Controllers
                     Cpf = cliente.Cpf
                 };
 
-            
+                List<Beneficiario> listaBeneficiario = boBeneficiario.ListarBeneficiarioDoCliente(cliente.Id);
+                if (listaBeneficiario != null && listaBeneficiario.Count > 0)
+                {
+                    model.ListaBeneficiario = listaBeneficiario;
+                }
+
             }
 
             return View(model);
